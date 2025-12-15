@@ -16,6 +16,35 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         return View();
+
+    }
+    public IActionResult About()
+    {
+        return View();
+    }
+
+    public IActionResult Review()
+    {
+        return View();
+    }
+    public IActionResult Contact()
+    {
+        return View();
+    }
+    public IActionResult Menu()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult AddContact(UserContact model)
+    {
+        if (!ModelState.IsValid)
+            return View("Contact");
+
+        // Save to DB here
+        return RedirectToAction("Contact");
     }
 
     public IActionResult Privacy()

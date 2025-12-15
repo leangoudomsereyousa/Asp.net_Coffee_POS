@@ -32,7 +32,7 @@ namespace Coffee_POS.Models
         [Column("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
-        // Navigation Properties
+        // Navigation Properties w
         public Supplier? Supplier { get; set; }
         public List<PurchaseItem>? Items { get; set; }
     }

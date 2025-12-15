@@ -1,4 +1,3 @@
-using Coffee_POS.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,14 +5,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add MVC
 builder.Services.AddControllersWithViews();
 
-// Add EF Core + MySQL
+// Add EF Core + MySQL/MariaDB
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
-        new MySqlServerVersion(new Version(10, 4, 27)) // For MariaDB from XAMPP
+        new MySqlServerVersion(new Version(10, 4, 27)) // Matches your MariaDB version from XAMPP
     )
 );
-
 
 // Enable Session (for Auth)
 builder.Services.AddSession();
@@ -28,14 +26,18 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 app.UseSession();
 app.UseAuthorization();
 
 // Default route
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+    name: "backend",
+    pattern: "Admin/{controller=Dashboard}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "frontend",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
 app.Run();

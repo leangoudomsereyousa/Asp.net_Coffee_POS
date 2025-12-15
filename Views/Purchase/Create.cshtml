@@ -75,7 +75,7 @@
         }
 
         function loadProducts() {
-            let data = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(products));
+            let data = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(products));
             let options = "";
 
             data.forEach(p => {
@@ -84,6 +84,8 @@
 
             return options;
         }
+
+        
 
         function removeRow(btn) {
             btn.closest("tr").remove();

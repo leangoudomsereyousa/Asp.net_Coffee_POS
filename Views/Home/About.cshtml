@@ -1,0 +1,59 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "About";
+}
+
+
+
+<!-- ABOUT SECTION -->
+<section id="about" class="bg-gray-50 dark:bg-gray-900 py-20 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center text-gray-900 dark:text-gray-200">
+
+        <!-- Our Story -->
+        <div class="space-y-6">
+            <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Our Story</h2>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+                Welcome to <span class="font-semibold text-[#00704A]">MAY BROWN Coffee</span>! We started our journey in 2020 with the mission to provide the best coffee experience in town. Located in the heart of Phnom Penh, we offer a cozy atmosphere for coffee lovers to relax and enjoy their favorite beverages.
+            </p>
+            <div class="space-y-2 text-gray-700 dark:text-gray-300">
+                <p><span class="font-semibold">Address:</span> 123 Coffee Street, Phnom Penh, Cambodia</p>
+                <p><span class="font-semibold">Phone:</span> (+855) 123-456-789</p>
+                <p><span class="font-semibold">Email:</span> contact@maybrowncoffee.com</p>
+            </div>
+        </div>
+
+        <!-- Map -->
+        <div class="space-y-4">
+            <h2 class="text-2xl font-semibold text-center mb-4 text-gray-900 dark:text-white">Our Location</h2>
+            <div id="map" class="w-full h-96 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700"></div>
+        </div>
+
+    </div>
+</section>
+
+<!-- GOOGLE MAP SCRIPT -->
+<script>
+    function initMap() {
+        var location = { lat: 11.562108, lng: 104.888535 }; // Phnom Penh
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: location,
+            disableDefaultUI: true,
+            styles: [
+                { elementType: 'geometry', stylers: [{ color: '#f5f5f5' }] },
+                { elementType: 'labels.icon', stylers: [{ visibility: 'off' }] },
+                { elementType: 'labels.text.fill', stylers: [{ color: '#616161' }] },
+                { elementType: 'labels.text.stroke', stylers: [{ color: '#f5f5f5' }] },
+                { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#ffffff' }] },
+                { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#c9c9c9' }] }
+            ]
+        });
+
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            title: "MAY BROWN Coffee - Phnom Penh"
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>

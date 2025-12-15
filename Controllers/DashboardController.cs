@@ -1,5 +1,7 @@
 ﻿using System;
-using Coffee_POS.Data;
+using System.Linq;
+using System.Threading.Tasks; // <-- Add this
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,11 +18,13 @@ namespace Coffee_POS.Controllers
 
         public async Task<IActionResult> Index()
         {
+            // Count totals
             ViewBag.TotalProducts = await _context.Products.CountAsync();
             ViewBag.TotalOrders = await _context.Orders.CountAsync();
             ViewBag.TotalAssets = await _context.Assets.CountAsync();
             ViewBag.TotalPurchase = await _context.Purchases.CountAsync();
 
+            // Get 5 recent orders with user info
             ViewBag.RecentOrders = await _context.Orders
                 .Include(o => o.User)
                 .OrderByDescending(o => o.Id)
@@ -29,6 +33,5 @@ namespace Coffee_POS.Controllers
 
             return View();
         }
-
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-using Coffee_POS.Data;
+
 using Coffee_POS.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
