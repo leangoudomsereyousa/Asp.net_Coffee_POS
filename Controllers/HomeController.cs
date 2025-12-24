@@ -4,7 +4,7 @@ using Coffee_POS.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Coffee_POS.Controllers;
-
+//Test
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
