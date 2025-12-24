@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Coffee_POS.Models
@@ -19,6 +19,7 @@ namespace Coffee_POS.Models
         public DateTime? UpdatedAt { get; set; }
 
         // Relationship
-        public List<Product>? Products { get; set; }
+        //public List<Product> Products { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }

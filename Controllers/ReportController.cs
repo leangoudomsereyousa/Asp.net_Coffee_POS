@@ -37,10 +37,11 @@ namespace Coffee_POS.Controllers
 
             var data = await _context.Orders
                 .Include(o => o.Product)
-                .Where(o => o.CreatedAt.Value.Month == month &&
-                            o.CreatedAt.Value.Year == year)
+                .Where(o => o.CreatedAt.Month == month &&
+                            o.CreatedAt.Year == year)
                 .OrderByDescending(o => o.Id)
                 .ToListAsync();
+
 
             return View(data);
         }

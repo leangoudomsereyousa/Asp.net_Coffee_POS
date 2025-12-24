@@ -31,6 +31,7 @@ namespace Coffee_POS.Models
         public DateTime? UpdatedAt { get; set; }
 
         // Navigation
+        public Purchase? Purchase { get; set; }
         public Ingredient? Ingredient { get; set; }
     }
 }

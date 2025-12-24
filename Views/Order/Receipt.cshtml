@@ -9,7 +9,7 @@
     <h3 class="fw-bold text-center mb-4">Coffee POS Receipt</h3>
 
     <p><strong>Order ID:</strong> @Model.Id</p>
-    <p><strong>Date:</strong> @Model.CreatedAt?.ToString("yyyy-MM-dd HH:mm")</p>
+    <p><strong>Date:</strong> @Model.CreatedAt.ToString("yyyy-MM-dd HH:mm")</p>
     <p><strong>Customer:</strong> @Model.User?.Name</p>
 
     <table class="table table-bordered mt-3">

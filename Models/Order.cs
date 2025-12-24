@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Coffee_POS.Models
@@ -6,6 +6,7 @@ namespace Coffee_POS.Models
     [Table("orders")]
     public class Order
     {
+        [Key]
         [Column("id")]
         public long Id { get; set; }
 
@@ -28,28 +29,28 @@ namespace Coffee_POS.Models
         public decimal TotalPrice { get; set; }
 
         [Column("created_at")]
-        public DateTime? CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
 
         [Column("updated_at")]
-        public DateTime? UpdatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
 
         [Column("payment_method")]
-        public string? PaymentMethod { get; set; }
+        public string PaymentMethod { get; set; }
 
         [Column("order_type")]
-        public string? OrderType { get; set; }
+        public string OrderType { get; set; }
 
         [Column("size")]
-        public string? Size { get; set; }
+        public string Size { get; set; }
 
         [Column("notes")]
-        public string? Notes { get; set; }
+        public string Notes { get; set; }
 
         [Column("delivery_location_id")]
         public long? DeliveryLocationId { get; set; }
 
         // Relationships
-        public Product? Product { get; set; }
-        public User? User { get; set; }
+        public Product Product { get; set; }
+        public User User { get; set; }
     }
 }

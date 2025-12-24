@@ -17,6 +17,7 @@ namespace Coffee_POS.Models
         public Order? Order { get; set; }
 
         [Column("product_id")]
+        //public long ProductId { get; set; }
         public long ProductId { get; set; }
 
         [ForeignKey(nameof(ProductId))]

@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Contact";
+}
+
+<section class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 py-16">
+    <div class="container mx-auto px-4">
+        <div class="max-w-lg mx-auto bg-white dark:bg-green-900 rounded-3xl shadow-xl p-8 md:p-10 transition-transform hover:-translate-y-1 hover:shadow-2xl">
+
+            <h1 class="text-center text-gray-900 dark:text-white text-3xl font-semibold mb-6">Contact Us</h1>
+
+            <form asp-action="AddContact" asp-controller="Contact" method="post">
+                @Html.AntiForgeryToken()
+
+                <!-- Name -->
+                <div class="mb-4">
+                    <label class="block text-gray-800 dark:text-gray-200 font-medium mb-2">Name</label>
+                    <input type="text" name="Name" placeholder="Enter your name" required
+                           class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-green-700 focus:ring-2 focus:ring-green-600 focus:outline-none dark:bg-green-800 dark:text-white text-gray-900" />
+                </div>
+
+                <!-- Phone -->
+                <div class="mb-4">
+                    <label class="block text-gray-800 dark:text-gray-200 font-medium mb-2">Phone</label>
+                    <input type="tel" name="Phone" placeholder="Enter your phone number" required
+                           class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-green-700 focus:ring-2 focus:ring-green-600 focus:outline-none dark:bg-green-800 dark:text-white text-gray-900" />
+                </div>
+
+                <!-- Inquiry Type -->
+                <div class="mb-4">
+                    <label class="block text-gray-800 dark:text-gray-200 font-medium mb-2">Inquiry Type</label>
+                    <div class="flex gap-4">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="InquiryType" value="issue" required
+                                   class="form-radio text-green-600 dark:text-green-400" />
+                            <span class="text-gray-800 dark:text-gray-200">Issue</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="InquiryType" value="feedback"
+                                   class="form-radio text-green-600 dark:text-green-400" />
+                            <span class="text-gray-800 dark:text-gray-200">Feedback</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="InquiryType" value="other"
+                                   class="form-radio text-green-600 dark:text-green-400" />
+                            <span class="text-gray-800 dark:text-gray-200">Other</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div class="mb-6">
+                    <label class="block text-gray-800 dark:text-gray-200 font-medium mb-2">Message</label>
+                    <textarea name="Message" rows="5" placeholder="Write your message here..." required
+                              class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-green-700 focus:ring-2 focus:ring-green-600 focus:outline-none dark:bg-green-800 dark:text-white text-gray-900"></textarea>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <button type="submit" class="flex-1 bg-green-700 hover:bg-green-800 text-white font-medium py-3 rounded-xl transition-all shadow-md">
+                        Send
+                    </button>
+                    <button type="reset" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-medium py-3 rounded-xl transition-all shadow-md">
+                        Reset
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>

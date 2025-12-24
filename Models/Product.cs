@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Coffee_POS.Models
@@ -19,18 +20,21 @@ namespace Coffee_POS.Models
         public long CategoryId { get; set; }
 
         [Column("description")]
-        public string? Description { get; set; }
+        public string Description { get; set; }
 
         [Column("image")]
-        public string? Image { get; set; }
+        public string Image { get; set; }
 
         [Column("created_at")]
-        public DateTime? CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
 
         [Column("updated_at")]
-        public DateTime? UpdatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
 
         // Navigation
         public Category Category { get; set; }
+
+        public ICollection<ProductSize> ProductSizes { get; set; } = new List<ProductSize>();
+        public ICollection<ProductReview> Reviews { get; set; } = new List<ProductReview>();
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Coffee_POS.Models
@@ -26,5 +26,8 @@ namespace Coffee_POS.Models
 
         [Column("updated_at")]
         public DateTime? UpdatedAt { get; set; }
+        // Navigation
+        public ICollection<Review>? Reviews { get; set; }
+
     }
 }

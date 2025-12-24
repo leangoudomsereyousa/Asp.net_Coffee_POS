@@ -1,91 +1,91 @@
-﻿@{
-    ViewBag.Title = "Dashboard";
-}
+﻿@* @{ *@
+@*     ViewBag.Title = "Dashboard"; *@
+@* } *@
 
-<div class="row">
-    <!-- PRODUCTS -->
-    <div class="col-md-3">
-        <div class="card shadow-sm border-0 text-white" style="background:#5865F2">
-            <div class="card-body">
-                <h5 class="card-title">Products</h5>
-                <h2>@ViewBag.TotalProducts</h2>
-                <i class="fa fa-box fa-2x"></i>
-            </div>
-        </div>
-    </div>
+@* <div class="row"> *@
+@*     <!-- PRODUCTS --> *@
+@*     <div class="col-md-3"> *@
+@*         <div class="card shadow-sm border-0 text-white" style="background:#5865F2"> *@
+@*             <div class="card-body"> *@
+@*                 <h5 class="card-title">Products</h5> *@
+@*                 <h2>@ViewBag.TotalProducts</h2> *@
+@*                 <i class="fa fa-box fa-2x"></i> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
 
-    <!-- ORDERS -->
-    <div class="col-md-3">
-        <div class="card shadow-sm border-0 text-white" style="background:#43B581">
-            <div class="card-body">
-                <h5 class="card-title">Orders</h5>
-                <h2>@ViewBag.TotalOrders</h2>
-                <i class="fa fa-shopping-cart fa-2x"></i>
-            </div>
-        </div>
-    </div>
+@*     <!-- ORDERS --> *@
+@*     <div class="col-md-3"> *@
+@*         <div class="card shadow-sm border-0 text-white" style="background:#43B581"> *@
+@*             <div class="card-body"> *@
+@*                 <h5 class="card-title">Orders</h5> *@
+@*                 <h2>@ViewBag.TotalOrders</h2> *@
+@*                 <i class="fa fa-shopping-cart fa-2x"></i> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
 
-    <!-- PURCHASES -->
-    <div class="col-md-3">
-        <div class="card shadow-sm border-0 text-white" style="background:#FAA61A">
-            <div class="card-body">
-                <h5 class="card-title">Purchases</h5>
-                <h2>@ViewBag.TotalPurchase</h2>
-                <i class="fa fa-truck fa-2x"></i>
-            </div>
-        </div>
-    </div>
+@*     <!-- PURCHASES --> *@
+@*     <div class="col-md-3"> *@
+@*         <div class="card shadow-sm border-0 text-white" style="background:#FAA61A"> *@
+@*             <div class="card-body"> *@
+@*                 <h5 class="card-title">Purchases</h5> *@
+@*                 <h2>@ViewBag.TotalPurchase</h2> *@
+@*                 <i class="fa fa-truck fa-2x"></i> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
 
-    <!-- ASSETS -->
-    <div class="col-md-3">
-        <div class="card shadow-sm border-0 text-white" style="background:#ED4245">
-            <div class="card-body">
-                <h5 class="card-title">Assets</h5>
-                <h2>@ViewBag.TotalAssets</h2>
-                <i class="fa fa-cubes fa-2x"></i>
-            </div>
-        </div>
-    </div>
-</div>
+@*     <!-- ASSETS --> *@
+@*     <div class="col-md-3"> *@
+@*         <div class="card shadow-sm border-0 text-white" style="background:#ED4245"> *@
+@*             <div class="card-body"> *@
+@*                 <h5 class="card-title">Assets</h5> *@
+@*                 <h2>@ViewBag.TotalAssets</h2> *@
+@*                 <i class="fa fa-cubes fa-2x"></i> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
 
-<hr />
+@* <hr /> *@
 
-<!-- RECENT ORDERS -->
-<h4 class="mt-4 fw-bold">Recent Orders</h4>
+@* <!-- RECENT ORDERS --> *@
+@* <h4 class="mt-4 fw-bold">Recent Orders</h4> *@
 
-<table class="table table-striped mt-3 shadow-sm bg-white">
-    <thead class="table-dark">
-        <tr>
-            <th>ID</th>
-            <th>User</th>
-            <th>Total</th>
-            <th>Status</th>
-            <th>Date</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (ViewBag.RecentOrders != null)
-        {
-            foreach (var order in ViewBag.RecentOrders)
-            {
-                <tr>
-                    <td>@order.Id</td>
-                    <td>@order.User?.Name</td>
-                    <td>$@order.TotalPrice</td>
-                    <td>
-                        <span class="badge bg-success">@order.Status</span>
-                    </td>
-                    <td>@order.CreatedAt?.ToString("yyyy-MM-dd")</td>
-                </tr>
-            }
-        }
-        else
-        {
-            <tr>
-                <td colspan="5" class="text-center text-muted">
-                    No recent orders available.
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+@* <table class="table table-striped mt-3 shadow-sm bg-white"> *@
+@*     <thead class="table-dark"> *@
+@*         <tr> *@
+@*             <th>ID</th> *@
+@*             <th>User</th> *@
+@*             <th>Total</th> *@
+@*             <th>Status</th> *@
+@*             <th>Date</th> *@
+@*         </tr> *@
+@*     </thead> *@
+@*     <tbody> *@
+@*         @if (ViewBag.RecentOrders != null) *@
+@*         { *@
+@*             foreach (var order in ViewBag.RecentOrders) *@
+@*             { *@
+@*                 <tr> *@
+@*                     <td>@order.Id</td> *@
+@*                     <td>@order.User?.Name</td> *@
+@*                     <td>$@order.TotalPrice</td> *@
+@*                     <td> *@
+@*                         <span class="badge bg-success">@order.Status</span> *@
+@*                     </td> *@
+@*                     <td>@order.CreatedAt?.ToString("yyyy-MM-dd")</td> *@
+@*                 </tr> *@
+@*             } *@
+@*         } *@
+@*         else *@
+@*         { *@
+@*             <tr> *@
+@*                 <td colspan="5" class="text-center text-muted"> *@
+@*                     No recent orders available. *@
+@*                 </td> *@
+@*             </tr> *@
+@*         } *@
+@*     </tbody> *@
+@* </table> *@

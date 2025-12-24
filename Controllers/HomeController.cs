@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Coffee_POS.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Coffee_POS.Controllers;
 
@@ -14,6 +15,22 @@ public class HomeController : Controller
     }
 
     public IActionResult Index()
+    {
+        return View();
+    }
+
+    public IActionResult Review()
+    {
+        return View();
+    }
+
+    public IActionResult Contact()
+    {
+        return View();
+    }
+
+
+    public IActionResult About()
     {
         return View();
     }
